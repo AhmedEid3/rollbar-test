@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
+import Providers from "./Providers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,8 +19,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        {children}
-
+        <Providers>{children}</Providers>
+        {/* 
         <Script id="rollbar-id" strategy="beforeInteractive">
           {`
               var _rollbarConfig = {
@@ -37,7 +38,7 @@ export default function RootLayout({
 
             Rollbar.info('Hello world!'); // Sending an arbitrary message to Rollbar
             `}
-        </Script>
+        </Script> */}
 
         {/* <Script id="rollbar-id" strategy="beforeInteractive">
           {`
