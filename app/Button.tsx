@@ -9,7 +9,9 @@ export default function Button() {
       window.Rollbar?.error(error);
     }
   }
+
   function TestError2() {
+    throw new Error("This is a test error");
     const a = null;
     return a.hello();
   }
