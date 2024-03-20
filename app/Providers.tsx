@@ -1,8 +1,9 @@
 "use client";
 import { Provider } from "@rollbar/react"; // Provider imports 'rollbar'
 import { PropsWithChildren } from "react";
+import Rollbar from "rollbar";
 
-const rollbarConfig = {
+const rollbarConfig: Rollbar.Configuration = {
   accessToken: process.env.NEXT_PUBLIC_ROLLBAR_CLIENT_TOKEN,
   environment: "testenv",
   captureUncaught: true,

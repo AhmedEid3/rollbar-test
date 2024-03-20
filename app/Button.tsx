@@ -1,12 +1,16 @@
 "use client";
+
+import { useRollbar } from "@rollbar/react";
+
 export default function Button() {
+  const rollbar = useRollbar();
   function TestError() {
     try {
       const a = null;
       return a.hello();
-    } catch (error) {
-      console.log("Error", error);
-      window.Rollbar?.error(error);
+    } catch (error: any) {
+      console.log("Error button one ", error);
+      rollbar.error("From " + error);
     }
   }
 
