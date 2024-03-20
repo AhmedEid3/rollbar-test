@@ -16,7 +16,7 @@ export default function Error({
     // Log the error to an error reporting service
     console.log({ error });
 
-    rollbar.error(error);
+    rollbar.error(error.stack ?? error);
   }, [error]);
 
   return (
