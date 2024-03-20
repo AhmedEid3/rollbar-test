@@ -4,6 +4,7 @@ import { useRollbar } from "@rollbar/react";
 
 export default function Button() {
   const rollbar = useRollbar();
+
   function TestError() {
     try {
       const a = null;
